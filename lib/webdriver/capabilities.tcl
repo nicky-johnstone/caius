@@ -31,9 +31,12 @@ namespace eval WebDriver {
     ::itcl::class Capabilities {
 
         common attributes {
-            { string browser_name                "htmlunit"  rw }
+            { string browserName                 "htmlunit"  rw }
             { string version                     ""          rw }
-            { bool   platform                    ""          rw }
+            { string platform                    ""          rw }
+            { string platformVersion             ""          rw }
+            { string os                          ""          rw }
+            { string os_version                  ""          rw }
             { bool   javascript_enabled          true        rw }
             { bool   takes_screenshot            true        rw }
             { bool   handles_alerts              true        rw }
@@ -53,7 +56,7 @@ namespace eval WebDriver {
             OOSupport::init_attributes
 
             set options {
-                {browser_name.arg               htmlunit "the browser to use (htmlunit|chrome|firefox|ie|...)"}
+                {browserName.arg                htmlunit "the browser to use (htmlunit|chrome|firefox|ie|...)"}
                 {javascript_enabled.arg         true     "enable JavaScript (true|false)"}
                 {takes_screenshot.arg           true     "enable taking screenshots (true|false)"}
                 {handles_alerts.arg             true     "enable alert handling (true|false)"}
